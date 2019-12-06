@@ -15,7 +15,7 @@ public class MuffinController {
     public MuffinController(MuffinService service) {
         this.service = service;
     }
-    @GetMapping("/muffins/")
+    @GetMapping("/muffins")
     public ResponseEntity<Iterable<Muffin>> index() {
         return new ResponseEntity<>(service.index(), HttpStatus.OK);
     }
@@ -23,7 +23,7 @@ public class MuffinController {
     public ResponseEntity<Muffin> show(@PathVariable Long id) {
         return new ResponseEntity<>(service.show(id), HttpStatus.OK);
     }
-    @PostMapping("/muffins/")
+    @PostMapping("/muffins")
     public ResponseEntity<Muffin> create(@RequestBody Muffin baker) {
         return new ResponseEntity<>(service.create(baker), HttpStatus.CREATED);
     }
